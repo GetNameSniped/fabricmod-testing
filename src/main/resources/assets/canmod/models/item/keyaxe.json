@@ -1,0 +1,113 @@
+{
+	"credit": "Made with Blockbench",
+	"texture_size": [1, 1],
+	"textures": {
+		"3": "block/texture",
+		"particle": "item/trident"
+	},
+	"elements": [
+		{
+			"from": [7, 0, 7],
+			"to": [8, 10, 8],
+			"faces": {
+				"north": {"uv": [0.25, 9.25, 0.75, 9.75], "texture": "#3"},
+				"east": {"uv": [1.25, 9.25, 1.75, 9.75], "texture": "#3"},
+				"south": {"uv": [2.25, 9.25, 2.75, 9.75], "texture": "#3"},
+				"west": {"uv": [3.25, 9.25, 3.75, 9.75], "texture": "#3"},
+				"up": {"uv": [4.25, 9.25, 4.75, 9.75], "texture": "#3"},
+				"down": {"uv": [5.25, 9.25, 5.75, 9.75], "texture": "#3"}
+			}
+		},
+		{
+			"from": [5, 10, 7],
+			"to": [13, 14, 8],
+			"faces": {
+				"north": {"uv": [0, 0, 8, 4], "texture": "#3"},
+				"east": {"uv": [14, 0, 15, 4], "texture": "#3"},
+				"south": {"uv": [0, 0, 8, 4], "texture": "#3"},
+				"west": {"uv": [15, 0, 16, 4], "texture": "#3"},
+				"up": {"uv": [0, 14, 8, 15], "texture": "#3"},
+				"down": {"uv": [0, 15, 8, 16], "texture": "#3"}
+			}
+		}
+	],
+	"overrides": [
+		{
+			"predicate": {
+				"pulling": 1
+			},
+			"model": "item/bow_pulling_0"
+		},
+		{
+			"predicate": {
+				"pulling": 1,
+				"pull": 0.65
+			},
+			"model": "item/bow_pulling_1"
+		},
+		{
+			"predicate": {
+				"pulling": 1,
+				"pull": 0.9
+			},
+			"model": "item/bow_pulling_2"
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [51, 90, -40],
+			"translation": [1, 10, 2],
+			"scale": [1.5, 1.5, 1.5]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [9, -90, 0],
+			"translation": [-1, 10, 2],
+			"scale": [1.5, 1.5, 1.5]
+		},
+		"firstperson_righthand": {
+			"rotation": [-26, 90, 0],
+			"translation": [3.25, 3.75, -2.25],
+			"scale": [0.9, 0.9, 0.9]
+		},
+		"firstperson_lefthand": {
+			"rotation": [-26, -90, 0],
+			"translation": [3.25, 3.75, -2.25],
+			"scale": [0.9, 0.9, 0.9]
+		},
+		"ground": {
+			"rotation": [-9.29, 1.93, -1.82],
+			"translation": [4, 12.75, 2],
+			"scale": [2, 2, 2]
+		},
+		"gui": {
+			"rotation": [13.57, 0.96, -11.69],
+			"translation": [-1, 1, 0],
+			"scale": [0.9, 0.9, 0.9]
+		},
+		"fixed": {
+			"rotation": [0, 180, 0],
+			"translation": [1, 4, -5],
+			"scale": [2, 2, 2]
+		}
+	},
+	"groups": [
+		{
+			"name": "trident_in_hand",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"nbt": "{}",
+			"armAnimationEnabled": true,
+			"children": []
+		},
+		{
+			"name": "bow",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"nbt": "{}",
+			"armAnimationEnabled": false,
+			"children": []
+		},
+		0,
+		1
+	]
+}

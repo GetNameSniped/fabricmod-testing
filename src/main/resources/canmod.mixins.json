@@ -6,7 +6,8 @@
   "mixins": [
   ],
   "client": [
-    "ExampleMixin"
+    "ExampleMixin",
+    "MixinMovementPacket"
   ],
   "injectors": {
     "defaultRequire": 1
