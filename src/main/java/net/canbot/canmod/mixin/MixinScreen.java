@@ -1,6 +1,5 @@
 package net.canbot.canmod.mixin;
 
-import net.canbot.canmod.hax.Modules.IamBot;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.GameMenuScreen;
 import net.minecraft.client.gui.widget.ButtonWidget;
@@ -17,9 +16,7 @@ public abstract class MixinScreen extends Screen {
     @Inject(at=@At("HEAD"), method = "initWidgets")
     protected void initWidgets(CallbackInfo ci) {
         this.addDrawableChild(new ButtonWidget(this.width/2-180, this.height/2+35-145, 50, 20, Text.of("CW"), (button) -> {
-            IamBot.toggleIam();
-            if (IamBot.enabled) {
-            button.setMessage(Text.of("IamBot Enabled"));} else {button.setMessage(Text.of("IamBot Disabled"));}
+
         }));
 
     }

@@ -1,7 +1,7 @@
 package net.canbot.canmod.hax.Modules;
 
 import net.canbot.canmod.hax.Module;
-import net.canbot.canmod.hax.Modules.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,7 +14,7 @@ public class ModuleManager {
 
         modules.add(new Flight());
         modules.add(new boatfly());
-        modules.add(new IamBot());
+        modules.add(new LiveOverflowBypass());
 
 
 
