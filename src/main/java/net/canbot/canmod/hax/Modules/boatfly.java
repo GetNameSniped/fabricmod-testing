@@ -1,7 +1,8 @@
 
-package net.canbot.canmod.hax;
+package net.canbot.canmod.hax.Modules;
 
 import net.canbot.canmod.event.KeyInputHandler;
+import net.canbot.canmod.hax.Module;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.minecraft.client.gui.Element;
 import net.minecraft.client.gui.Selectable;
@@ -24,7 +25,10 @@ import org.lwjgl.glfw.GLFW;
 import java.util.Objects;
 
 
-public class boatfly {
+public class boatfly extends Module {
+    public boatfly() {
+        super("Flight", GLFW.GLFW_KEY_R, Category.MOVEMENT);
+    }
     static KeyBinding boatFlyToggle = KeyInputHandler.boatFlyToggle;
 static Screen myScreen = new Screen(Text.of("Hi")) {
 

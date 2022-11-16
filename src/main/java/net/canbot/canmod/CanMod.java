@@ -18,6 +18,9 @@ public class CanMod implements ModInitializer {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 
 		LOGGER.info("Hello Fabric world!");
+		LOGGER.info("STFU");
+		System.out.println("HIIIIIIIII");
+		System.out.flush();
 		//ModItems.registerModItems();
 
 	}

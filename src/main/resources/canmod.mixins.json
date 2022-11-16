@@ -6,8 +6,8 @@
   "mixins": [
   ],
   "client": [
-    "ExampleMixin",
-    "MixinMovementPacket"
+    "MixinMovementPacket",
+    "MixinScreen"
   ],
   "injectors": {
     "defaultRequire": 1
