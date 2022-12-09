@@ -1,16 +1,21 @@
 package net.canbot.canmod.hax.Modules;
 
+import net.canbot.canmod.event.KeyInputHandler;
 import net.canbot.canmod.hax.Module;
+import net.minecraft.client.option.KeyBinding;
 import org.lwjgl.glfw.GLFW;
 
 public class Flight extends Module {
 
+    public static KeyBinding bind = KeyInputHandler.registerNewBind("Movement", "Flight", -1);
     public Flight() {
-        super("Flight", GLFW.GLFW_KEY_V, Category.MOVEMENT);
+        super("Flight", bind, Category.MOVEMENT);
     }
 
     @Override
+
     public void onTick() {
+
         mc.player.getAbilities().flying = true;
         mc.player.getAbilities().setFlySpeed(0.5f);
         mc.player.setSprinting(true);
@@ -29,10 +34,8 @@ public class Flight extends Module {
 
         mc.player.setVelocity(mc.player.getVelocity().x,mc.player.getVelocity().y + yMotion,mc.player.getVelocity().z);
     }
-
     @Override
-    public void onDisable(){
-        if(nullCheck()){return;}
+    public void onDisable() {
         mc.player.getAbilities().flying = false;
     }
 

@@ -1,9 +1,12 @@
 package net.canbot.canmod.hax.Modules;
 
 
+import net.canbot.canmod.CanMod;
+import net.canbot.canmod.event.KeyInputHandler;
 import net.canbot.canmod.mixin.PlayerMoveC2SPacketAccessor;
 import net.canbot.canmod.mixin.VehicleMoveC2SPacketAccessor;
 import net.canbot.canmod.hax.Module;
+import net.minecraft.client.option.KeyBinding;
 import net.minecraft.entity.vehicle.BoatEntity;
 import net.minecraft.network.Packet;
 import net.minecraft.network.packet.c2s.play.PlayerMoveC2SPacket;
@@ -14,11 +17,16 @@ import org.lwjgl.glfw.GLFW;
 public class LiveOverflowBypass extends Module {
 
     public LiveOverflowBypass() {
-        super("LiveOverflowBypass", GLFW.GLFW_KEY_L, Category.EXPLOIT);
+        super("IamBot", KeyInputHandler.registerNewBind("Movement", "IamBot", -1), Category.EXPLOIT);
+        this.toggle();
     }
 
+
+
     @Override
+
     public void onPacketSend(Packet p) {
+
 
 
 
@@ -28,6 +36,7 @@ public class LiveOverflowBypass extends Module {
 
             ((PlayerMoveC2SPacketAccessor) p).setX(x);
             ((PlayerMoveC2SPacketAccessor) p).setZ(z);
+
         }
 
         if(!(mc.player.getVehicle() instanceof BoatEntity boat)){return;}
@@ -40,5 +49,10 @@ public class LiveOverflowBypass extends Module {
             ((VehicleMoveC2SPacketAccessor) p).setZ(boatz);
         }
 
+    }
+
+    @Override
+    public void setBind(String category, String name, int binding) {
+        super.setBind(category, name, binding);
     }
 }

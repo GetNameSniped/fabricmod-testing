@@ -6,8 +6,13 @@
   "mixins": [
   ],
   "client": [
-    "MixinMovementPacket",
-    "MixinScreen"
+    "MinecraftClientMixin",
+    "PlayerMoveC2SPacketAccessor",
+    "VehicleMoveC2SPacketAccessor",
+    "ClientPlayNetworkHandlerMixin",
+    "ClientConnectionMixin",
+    "MixinInGameHud",
+    "PowdersnowMixin"
   ],
   "injectors": {
     "defaultRequire": 1

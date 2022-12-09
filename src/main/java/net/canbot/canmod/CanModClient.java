@@ -4,6 +4,7 @@ import net.canbot.canmod.event.KeyInputHandler;
 import net.canbot.canmod.item.ModItems;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.ModInitializer;
+import org.lwjgl.glfw.GLFW;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -14,5 +15,6 @@ public class CanModClient implements ClientModInitializer {
     public void onInitializeClient() {
 
         KeyInputHandler.register();
+
     }
 }

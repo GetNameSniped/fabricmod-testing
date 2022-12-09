@@ -7,28 +7,26 @@ import net.minecraft.client.util.InputUtil;
 import org.lwjgl.glfw.GLFW;
 
 public class KeyInputHandler {
-    public static final String KEY_CATEGORY_TUTORIAL = "key.canmod.category.tutorial";
-    public static final String KEY_SAY_CHAT = "key.canmod.say.chat";
+    public static final String KEY_CATEGORY = "Hello";
+    public static final String KEYNAME = "Hi";
     static boolean boatFlyIsActive = false;
     static double speed = 2;
 
 
     public static KeyBinding boatFlyToggle;
     public static void registerKeyInputs() {
-        boatfly.boatFlyStart();
+        System.out.println("Registered Keys");
     }
 
 
     public static void register() {
-
-        boatFlyToggle = KeyBindingHelper.registerKeyBinding(new KeyBinding(
-                KEY_SAY_CHAT,
-                InputUtil.Type.KEYSYM,
-            GLFW.GLFW_KEY_R,
-                KEY_CATEGORY_TUTORIAL
-        ));
         registerKeyInputs();
+
 
     }
 
+    public static KeyBinding registerNewBind(String category, String NAME, int DefaultKey) {
+        KeyBinding binding = KeyBindingHelper.registerKeyBinding(new KeyBinding(NAME, InputUtil.Type.KEYSYM, DefaultKey, category ));
+        return binding;
+    }
 }
