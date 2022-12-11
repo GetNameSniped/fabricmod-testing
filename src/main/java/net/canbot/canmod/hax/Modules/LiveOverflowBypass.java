@@ -19,6 +19,7 @@ public class LiveOverflowBypass extends Module {
     public LiveOverflowBypass() {
         super("IamBot", KeyInputHandler.registerNewBind("Movement", "IamBot", -1), Category.EXPLOIT);
         this.toggle();
+        this.showModule=false;
     }
 
 

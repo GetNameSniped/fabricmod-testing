@@ -40,7 +40,6 @@ public class Module {
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             if(bind.wasPressed()) {
                 this.toggle();
-                System.out.println("bind was pressed");
             }
         });
     }

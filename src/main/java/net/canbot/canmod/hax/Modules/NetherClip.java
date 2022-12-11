@@ -8,7 +8,7 @@ import org.lwjgl.glfw.GLFW;
 public class NetherClip extends Module {
     public NetherClip() {
         super("NetherClip", KeyInputHandler.registerNewBind("Movement", "NetherClip", -1), Category.EXPLOIT);
-        this.showModule=false;
+
     }
 
     @Override

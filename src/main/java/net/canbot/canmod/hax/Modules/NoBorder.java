@@ -8,6 +8,7 @@ public class NoBorder extends Module {
     public NoBorder() {
         super("NoBorder", KeyInputHandler.registerNewBind("Misc", "NoBorder", -1), Category.RENDER);
         this.toggle();
+        this.showModule=false;
     }
 
 }

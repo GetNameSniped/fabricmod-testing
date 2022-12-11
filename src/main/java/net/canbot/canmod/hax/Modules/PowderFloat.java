@@ -16,9 +16,15 @@ public class PowderFloat extends Module {
     public PowderFloat() {
 
         super("PowderFloat", KeyInputHandler.registerNewBind("Movement", "PowderFloat", -1), Category.MOVEMENT);
-
+        this.toggle();
+        this.showModule=false;
     }
-    private static Module module = ModuleManager.getModulebyName("PowderFloat");
+    static Module module;
+    @Override
+    public void onEnable() {
+        module=ModuleManager.getModulebyName("PowderFloat");
+    }
+
     public static boolean powderMixin(Entity entity) {
         if (entity == mc.player && module.toggled) {return true;}
 
@@ -36,6 +42,7 @@ static int tickcount = 1;
 
 
             if (mc.world.getBlockState(new BlockPos(x, y - 1, z)).getBlock().getName().getString().equals("Powder Snow")) {
+
                 tickcount+=1;
                 if(tickcount>20) {tickcount=1;}
                 if (tickcount == 3) {} else {

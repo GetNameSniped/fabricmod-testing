@@ -9,6 +9,9 @@ import net.minecraft.network.Packet;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.Comparator;
+import java.util.List;
+
 public class CanMod implements ModInitializer {
 	// This logger is used to write text to the console and the log file.
 	// It is considered best practice to use your mod id as the logger's name.
@@ -17,7 +20,7 @@ public class CanMod implements ModInitializer {
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 	public static final CanMod INSTANCE = new CanMod();
 	public ModuleManager moduleManager;
-
+	public static List<Module> sortedModules;
 	public static String NAME = "CanMod";
 	public static String VERSION = "0.0.1";
 	public MinecraftClient mc;
@@ -29,6 +32,8 @@ public class CanMod implements ModInitializer {
 		mc = MinecraftClient.getInstance();
 		moduleManager = new ModuleManager();
 		//ModItems.registerModItems();
+		sortedModules = ModuleManager.getModules();
+		sortedModules.sort(Comparator.comparingInt((Module module) -> module.getName().length()).reversed());
 
 	}
 	public static double playerX = 0;
