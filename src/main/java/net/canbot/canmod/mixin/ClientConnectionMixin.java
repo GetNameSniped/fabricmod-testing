@@ -5,6 +5,8 @@ import net.canbot.canmod.CanMod;
 import net.minecraft.network.ClientConnection;
 import net.minecraft.network.Packet;
 import net.minecraft.network.listener.PacketListener;
+import net.minecraft.network.packet.c2s.play.PlayerMoveC2SPacket;
+import net.minecraft.network.packet.c2s.play.VehicleMoveC2SPacket;
 import net.minecraft.network.packet.s2c.play.*;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -18,6 +20,15 @@ public class ClientConnectionMixin {
     @Inject(method = "handlePacket", at = @At("HEAD"), cancellable = true)
     private static <T extends PacketListener> void onHandlePacket(Packet<T> packet, PacketListener listener, CallbackInfo ci) {
         CanMod.INSTANCE.onPacketReceive(packet);
+
+        if (packet instanceof GameStateChangeS2CPacket) {
+            if (((GameStateChangeS2CPacket) packet).getReason().equals(GameStateChangeS2CPacket.GAME_WON) || ((GameStateChangeS2CPacket) packet).getReason().equals(GameStateChangeS2CPacket.DEMO_OPEN_SCREEN) || ((GameStateChangeS2CPacket) packet).getReason().equals(GameStateChangeS2CPacket.DEMO_MESSAGE_SHOWN)) {
+                ci.cancel();
+            }
+        }
+
+
+
 
         if(ModuleManager.getModulebyName("NoBorder") != null) {
             if (ModuleManager.getModulebyName("NoBorder").isToggled()) {

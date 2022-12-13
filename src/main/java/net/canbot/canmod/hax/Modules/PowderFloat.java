@@ -41,7 +41,7 @@ static int tickcount = 1;
 
 
 
-            if (mc.world.getBlockState(new BlockPos(x, y - 1, z)).getBlock().getName().getString().equals("Powder Snow")) {
+            if (mc.world.getBlockState(new BlockPos(x, y - 1, z)).getBlock().getName().getString().equals(Text.literal("Powder Snow"))) {
 
                 tickcount+=1;
                 if(tickcount>20) {tickcount=1;}

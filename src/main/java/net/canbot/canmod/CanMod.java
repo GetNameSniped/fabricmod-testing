@@ -6,6 +6,10 @@ import net.canbot.canmod.hax.ModuleManager;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.network.Packet;
+import net.minecraft.network.packet.c2s.play.ClientCommandC2SPacket;
+import net.minecraft.network.packet.c2s.play.KeepAliveC2SPacket;
+import net.minecraft.network.packet.c2s.play.PlayerMoveC2SPacket;
+import net.minecraft.network.packet.s2c.play.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -73,5 +77,12 @@ public class CanMod implements ModInitializer {
 				m.onPacketReceive(packet);
 			}
 		}
+		/*if (!(packet instanceof WorldTimeUpdateS2CPacket ||packet instanceof KeepAliveS2CPacket ||packet instanceof PlayerMoveC2SPacket ||packet instanceof PlayerListS2CPacket ||packet instanceof EntitiesDestroyS2CPacket ||packet instanceof EntitySetHeadYawS2CPacket ||packet instanceof EntityS2CPacket || packet instanceof EntityPositionS2CPacket ||packet instanceof EntityVelocityUpdateS2CPacket || packet instanceof ChunkDeltaUpdateS2CPacket || packet instanceof EntityStatusS2CPacket || packet instanceof BlockUpdateS2CPacket || packet instanceof EntityTrackerUpdateS2CPacket || packet instanceof EntitySpawnS2CPacket || packet instanceof EntityAttributesS2CPacket || packet instanceof ChunkDataS2CPacket || packet instanceof ClientCommandC2SPacket || packet instanceof KeepAliveC2SPacket || packet instanceof PlaySoundS2CPacket || packet instanceof EntityEquipmentUpdateS2CPacket)) {
+			System.out.println(packet);
+		}*/
+		if (packet instanceof GameStateChangeS2CPacket) {
+			System.out.println(((GameStateChangeS2CPacket) packet).getReason());
+
+		System.out.println(GameStateChangeS2CPacket.DEMO_OPEN_SCREEN);}
 	}
 }
