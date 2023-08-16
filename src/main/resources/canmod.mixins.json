@@ -4,15 +4,19 @@
   "package": "net.canbot.canmod.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "AccessorFrustum",
+    "AccessorWorldRenderer",
+    "FishingBobberEntityMixin"
   ],
   "client": [
-    "MinecraftClientMixin",
-    "PlayerMoveC2SPacketAccessor",
-    "VehicleMoveC2SPacketAccessor",
-    "ClientPlayNetworkHandlerMixin",
     "ClientConnectionMixin",
+    "ClientPlayNetworkHandlerMixin",
+    "MinecraftClientMixin",
     "MixinInGameHud",
-    "PowdersnowMixin"
+    "MixinScreen",
+    "PlayerMoveC2SPacketAccessor",
+    "PowdersnowMixin",
+    "VehicleMoveC2SPacketAccessor"
   ],
   "injectors": {
     "defaultRequire": 1

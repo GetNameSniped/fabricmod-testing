@@ -1,13 +1,10 @@
 package net.canbot.canmod;
 
 import net.canbot.canmod.event.KeyInputHandler;
-import net.canbot.canmod.item.ModItems;
 import net.fabricmc.api.ClientModInitializer;
-import net.fabricmc.api.ModInitializer;
-import org.lwjgl.glfw.GLFW;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
+import net.minecraft.entity.attribute.EntityAttribute;
+import net.minecraft.entity.mob.ZombieEntity;
 
 
 public class CanModClient implements ClientModInitializer {

@@ -14,5 +14,6 @@ public class SurvivalSpoof extends Module {
     @Override
     public void onEnable() {
         mc.interactionManager.setGameMode(GameMode.SURVIVAL);
+
     }
 }

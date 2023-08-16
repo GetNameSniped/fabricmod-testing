@@ -6,7 +6,7 @@ import net.canbot.canmod.hax.ModuleManager;
 import net.canbot.canmod.mixin.PlayerMoveC2SPacketAccessor;
 import net.canbot.canmod.mixin.VehicleMoveC2SPacketAccessor;
 import net.minecraft.entity.Entity;
-import net.minecraft.network.Packet;
+import net.minecraft.network.packet.Packet;
 import net.minecraft.network.packet.c2s.play.PlayerMoveC2SPacket;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;

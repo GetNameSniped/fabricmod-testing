@@ -19,6 +19,9 @@ public class ModuleManager {
         modules.add(new SurvivalSpoof());
         modules.add(new NoBorder());
         modules.add(new PowderFloat());
+        modules.add(new AutoReflect());
+        modules.add(new FireballMagic());
+        modules.add(new AutoFish());
     }
 
     public static List<Module> getModules(){

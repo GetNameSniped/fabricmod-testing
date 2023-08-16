@@ -29,7 +29,7 @@ public class Hud {
 
 
         for(Module m : CanMod.sortedModules) {
-            if(m.showModule) {
+            if(m.showModule && m.toggled) {
                 mc.textRenderer.drawWithShadow(matrixStack, m.getName() + " [" + KeyEvent.getKeyText(m.getBindInt()) + "]", 2, y, m.isToggled() ? color : -1);
                 y += mc.textRenderer.fontHeight + 1;
             }

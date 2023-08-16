@@ -5,8 +5,9 @@ import net.canbot.canmod.event.KeyInputHandler;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.option.KeyBinding;
-import net.minecraft.network.Packet;
+import net.minecraft.network.packet.Packet;
 import net.minecraft.text.Text;
 
 public class Module {
@@ -15,6 +16,7 @@ public class Module {
     public Category category;
     public KeyBinding bind;
     public boolean toggled;
+    public Screen screen;
 
     public Module(String name, KeyBinding bind, Category category) {
         this.name = name;
@@ -75,6 +77,9 @@ public class Module {
     }
     int bindInt;
 
+    public void setScreen(Screen newScreen) {screen=newScreen;}
+
+    public void makeScreenFromDefault() {}
 
     public void setName(String name) {
         this.name = name;

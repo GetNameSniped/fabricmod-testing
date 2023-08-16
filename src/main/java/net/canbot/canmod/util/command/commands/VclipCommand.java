@@ -1,0 +1,26 @@
+package net.canbot.canmod.util.command.commands;
+
+import net.canbot.canmod.util.command.Command;
+import net.minecraft.network.packet.c2s.play.PlayerMoveC2SPacket;
+
+import java.util.List;
+
+public class VclipCommand extends Command {
+
+
+    public VclipCommand() {
+        super("V-Clip", "vclip");
+    }
+
+    @Override
+    public void onCommand(List<String> args) {
+        for (int i = 0; i < 8; i++) {
+            mc.getNetworkHandler().sendPacket(new PlayerMoveC2SPacket.PositionAndOnGround(mc.player.getX(), mc.player.getY(), mc.player.getZ(), mc.player.isOnGround()));
+        }
+
+        mc.player.setPos(mc.player.getX(), mc.player.getY()+Double.parseDouble(args.get(0)), mc.player.getZ());
+        mc.getNetworkHandler().sendPacket(new PlayerMoveC2SPacket.PositionAndOnGround(mc.player.getX(), mc.player.getY(), mc.player.getZ(), false));
+
+    }
+
+}

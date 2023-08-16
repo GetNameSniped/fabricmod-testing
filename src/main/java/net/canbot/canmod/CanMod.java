@@ -3,9 +3,10 @@ package net.canbot.canmod;
 //import net.canbot.canmod.item.ModItems;
 import net.canbot.canmod.hax.Module;
 import net.canbot.canmod.hax.ModuleManager;
+import net.canbot.canmod.util.command.CommandHandler;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.network.Packet;
+import net.minecraft.network.packet.Packet;
 import net.minecraft.network.packet.c2s.play.ClientCommandC2SPacket;
 import net.minecraft.network.packet.c2s.play.KeepAliveC2SPacket;
 import net.minecraft.network.packet.c2s.play.PlayerMoveC2SPacket;
@@ -24,6 +25,7 @@ public class CanMod implements ModInitializer {
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 	public static final CanMod INSTANCE = new CanMod();
 	public ModuleManager moduleManager;
+	public CommandHandler commandHandler;
 	public static List<Module> sortedModules;
 	public static String NAME = "CanMod";
 	public static String VERSION = "0.0.1";
@@ -35,6 +37,7 @@ public class CanMod implements ModInitializer {
 		LOGGER.info("Hello Fabric world!");
 		mc = MinecraftClient.getInstance();
 		moduleManager = new ModuleManager();
+		commandHandler = new CommandHandler();
 		//ModItems.registerModItems();
 		sortedModules = ModuleManager.getModules();
 		sortedModules.sort(Comparator.comparingInt((Module module) -> module.getName().length()).reversed());
@@ -81,7 +84,7 @@ public class CanMod implements ModInitializer {
 			System.out.println(packet);
 		}*/
 		if (packet instanceof GameStateChangeS2CPacket) {
-			System.out.println(((GameStateChangeS2CPacket) packet).getReason());
+			System.out.println(((GameStateChangeS2CPacket) packet).getReason().equals(GameStateChangeS2CPacket.GAME_WON));
 
 		System.out.println(GameStateChangeS2CPacket.DEMO_OPEN_SCREEN);}
 	}
