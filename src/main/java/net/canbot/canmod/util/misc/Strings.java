@@ -7,7 +7,7 @@ public class Strings {
 
     public static String fromStringList(List<String> list) {
         String result = list.stream()
-                .map(n -> String.valueOf(n))
+                .map(String::valueOf)
                 .collect(Collectors.joining(" "));
         return result;
     }

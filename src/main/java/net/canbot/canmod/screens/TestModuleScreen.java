@@ -8,13 +8,15 @@ import net.minecraft.client.gui.widget.GridWidget;
 import net.minecraft.text.Text;
 
 public class TestModuleScreen extends Screen {
-    MinecraftClient mc = CanMod.INSTANCE.mc;
+    MinecraftClient mc = MinecraftClient.getInstance();
     public TestModuleScreen() {
+
+
         super(Text.of("Testing module"));
         GridWidget grid = new GridWidget();
         grid.getMainPositioner().margin(2, 1, 2, 1);
         GridWidget.Adder adder = grid.createAdder(6);
-        adder.add(ButtonWidget.builder(Text.of("Enabled: false"), b -> {
+        adder.add(ButtonWidget.builder(Text.of("Enabled: §4false"), b -> {
             mc.setScreen(new TestModuleScreen());
         }).width(70).build(), grid.getMainPositioner());
         grid.forEachChild(this::addDrawableChild);

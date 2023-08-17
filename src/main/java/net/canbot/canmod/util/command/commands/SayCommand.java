@@ -18,5 +18,7 @@ public class SayCommand extends Command {
     public void onCommand(List<String> args) {
 
         mc.player.sendMessage(Text.of(Strings.fromStringList(args)));
+
+
     }
 }
