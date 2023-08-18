@@ -4,6 +4,8 @@ import net.canbot.canmod.event.KeyInputHandler;
 import net.canbot.canmod.hax.Module;
 import net.canbot.canmod.util.entity.Target;
 import net.canbot.canmod.util.player.Rotations;
+import net.canbot.canmod.util.render.Renderer;
+import net.canbot.canmod.util.render.color.QuadColor;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.projectile.FireballEntity;
@@ -68,6 +70,7 @@ public class FireballMagic extends Module {
                     else if(getState(entity)=="GOPLACE") {
                         BlockPos dest = mc.player.getBlockPos().offset(Direction.Axis.Y, 5);
                         hitEntity(entity, Rotations.getYawFromTo(entity, dest), Rotations.getPitchFromTo(entity, dest));
+
                         //mc.player.sendMessage(Text.of("YAW: "+ Rotations.getYawFromTo(entity, dest) + " PITCH: " + Rotations.getPitchFromTo(entity, dest)));
                         //setState(entity, "HIT");
                     }

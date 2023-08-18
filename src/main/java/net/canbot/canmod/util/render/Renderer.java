@@ -61,9 +61,9 @@ public class Renderer {
 	}
 
 	public static void drawBoxFill(Box box, QuadColor color, Direction... excludeDirs) {
-		if (!FrustumUtils.isBoxVisible(box)) {
+		/*if (!FrustumUtils.isBoxVisible(box)) {
 			return;
-		}
+		}*/
 
 		setup();
 
@@ -89,9 +89,9 @@ public class Renderer {
 	}
 
 	public static void drawBoxOutline(Box box, QuadColor color, float lineWidth, Direction... excludeDirs) {
-		if (!FrustumUtils.isBoxVisible(box)) {
+		/*if (!FrustumUtils.isBoxVisible(box)) {
 			return;
-		}
+		}*/
 
 		setup();
 
@@ -117,10 +117,10 @@ public class Renderer {
 	// -------------------- Quads --------------------
 
 	public static void drawQuadFill(double x1, double y1, double z1, double x2, double y2, double z2, double x3, double y3, double z3, double x4, double y4, double z4, int cullMode, QuadColor color) {
-		if (!FrustumUtils.isPointVisible(x1, y1, z1) && !FrustumUtils.isPointVisible(x2, y2, z2)
+		/*if (!FrustumUtils.isPointVisible(x1, y1, z1) && !FrustumUtils.isPointVisible(x2, y2, z2)
 				&& !FrustumUtils.isPointVisible(x3, y3, z3) && !FrustumUtils.isPointVisible(x4, y4, z4)) {
 			return;
-		}
+		}*/
 
 		setup();
 
@@ -145,10 +145,10 @@ public class Renderer {
 	}
 
 	public static void drawQuadOutline(double x1, double y1, double z1, double x2, double y2, double z2, double x3, double y3, double z3, double x4, double y4, double z4, float lineWidth, QuadColor color) {
-		if (!FrustumUtils.isPointVisible(x1, y1, z1) && !FrustumUtils.isPointVisible(x2, y2, z2)
+		/*if (!FrustumUtils.isPointVisible(x1, y1, z1) && !FrustumUtils.isPointVisible(x2, y2, z2)
 				&& !FrustumUtils.isPointVisible(x3, y3, z3) && !FrustumUtils.isPointVisible(x4, y4, z4)) {
 			return;
-		}
+		}*/
 
 		setup();
 
@@ -178,9 +178,9 @@ public class Renderer {
 	// -------------------- Lines --------------------
 
 	public static void drawLine(double x1, double y1, double z1, double x2, double y2, double z2, LineColor color, float width) {
-		if (!FrustumUtils.isPointVisible(x1, y1, z1) && !FrustumUtils.isPointVisible(x2, y2, z2)) {
+		/*if (!FrustumUtils.isPointVisible(x1, y1, z1) && !FrustumUtils.isPointVisible(x2, y2, z2)) {
 			return;
-		}
+		}*/
 
 		setup();
 
